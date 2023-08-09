@@ -2,10 +2,9 @@ package dev.partin.james.jellyfinlibrarymanager.api.model;
 
 import java.util.*;
 
-import lombok.Getter;
+
 import org.javatuples.*;
 
-@Getter
 public class Job {
     private final String fileName;
     //The tuple represents whether the job is finished and whether it failed
