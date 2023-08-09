@@ -38,4 +38,5 @@ out/
 ### VS Code ###
 .vscode/
 /libs/commons-fileupload2-2.0.0-M1/
-/libs/
+/libs/*
+/libs/commons-fileupload2-2.0.0-M1/
