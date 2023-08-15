@@ -1,27 +1,55 @@
 package dev.partin.james.jellyfinlibrarymanager.api.model;
 
-import java.util.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import lombok.*;
 
-
-import org.javatuples.*;
-
+@Entity
+@Getter
+@Setter
 public class Job {
-    private final String fileName;
-    //The tuple represents whether the job is finished and whether it failed
-    private Map<String, Pair<Boolean, Boolean>> jobStatus;
+
+    private String fileName;
+
+    private String filepath;
+
+    @OneToOne
+    private jobStatus uploadStatus;
+
+    @OneToOne
+    private jobStatus transcodeStatus;
+
+    @OneToOne
+    private jobStatus subtitlesStatus;
+
+    @OneToOne
+    private jobStatus metadataStatus;
+
+    @OneToOne
+    private jobStatus cleanupStatus;
+
+
+    @Id
+    private Long id;
+
+    public Job(){
+        this.uploadStatus = new jobStatus("Upload");
+        this.transcodeStatus = new jobStatus("Transcode");
+        this.subtitlesStatus = new jobStatus("Subtitles");
+        this.metadataStatus = new jobStatus("Metadata");
+        this.cleanupStatus = new jobStatus("Cleanup");
+    }
 
     public Job(String fileName) {
         this.fileName = fileName;
-        this.jobStatus = Map.of(
-            "upload", new Pair<Boolean, Boolean>(false, false),
-            "transcode", new Pair<Boolean, Boolean>(false, false),
-            "subtitles", new Pair<Boolean, Boolean>(false, false),
-            "metadata", new Pair<Boolean, Boolean>(false, false),
-            "cleanup", new Pair<Boolean, Boolean>(false, false)
-        );
-    }
+        this.filepath = System.getProperty("java.io.tmpdir") + fileName;
+        this.uploadStatus = new jobStatus("Upload");
+        this.transcodeStatus = new jobStatus("Transcode");
+        this.subtitlesStatus = new jobStatus("Subtitles");
+        this.metadataStatus = new jobStatus("Metadata");
+        this.cleanupStatus = new jobStatus("Cleanup");
 
-    public void setJobStatus(String stepName, Pair<Boolean, Boolean> successAndFailure) {
-        jobStatus.put(stepName, successAndFailure);
     }
 }
+
