@@ -51,5 +51,10 @@ public class Job {
         this.cleanupStatus = new jobStatus("Cleanup");
 
     }
+
+    public void setfileName(String fileName) {
+        this.fileName = fileName;
+        this.filepath = System.getProperty("java.io.tmpdir") + fileName;
+    }
 }
 
