@@ -29,7 +29,7 @@ public class JobController {
         this.jobService = jobService;
     }
 
-    @GetMapping("/too")
+    @GetMapping("/testtwo")
     public ResponseEntity<String> test() throws SQLException {
         jobService.createJob("test");
         return ResponseEntity.ok("Test");
