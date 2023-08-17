@@ -1,7 +1,10 @@
 package dev.partin.james.jellyfinlibrarymanager.api.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jdk.jfr.Percentage;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +18,7 @@ public class jobStatus {
     private float progress;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     public jobStatus() {
@@ -36,10 +40,6 @@ public class jobStatus {
         this.finished = false;
         this.failed = false;
         this.progress = 0;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
 }

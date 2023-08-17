@@ -1,8 +1,6 @@
 package dev.partin.james.jellyfinlibrarymanager.api.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -14,26 +12,26 @@ public class Job {
 
     private String filepath;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private jobStatus uploadStatus;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private jobStatus transcodeStatus;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private jobStatus subtitlesStatus;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private jobStatus metadataStatus;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private jobStatus cleanupStatus;
 
-
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    public Job(){
+    public Job() {
         this.uploadStatus = new jobStatus("Upload");
         this.transcodeStatus = new jobStatus("Transcode");
         this.subtitlesStatus = new jobStatus("Subtitles");
@@ -49,10 +47,9 @@ public class Job {
         this.subtitlesStatus = new jobStatus("Subtitles");
         this.metadataStatus = new jobStatus("Metadata");
         this.cleanupStatus = new jobStatus("Cleanup");
-
     }
 
-    public void setfileName(String fileName) {
+    public void setFileName(String fileName) {
         this.fileName = fileName;
         this.filepath = System.getProperty("java.io.tmpdir") + fileName;
     }

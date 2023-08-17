@@ -12,9 +12,9 @@ import javax.sql.DataSource;
 
 @SpringBootApplication
 public class JellyfinLibraryManagerApplication {
-	//TODO: Write tests
-	public static void main(String[] args) {
-		SpringApplication.run(JellyfinLibraryManagerApplication.class, args);
-	}
+    //TODO: Write tests
+    public static void main(String[] args) {
+        SpringApplication.run(JellyfinLibraryManagerApplication.class, args);
+    }
 
 }

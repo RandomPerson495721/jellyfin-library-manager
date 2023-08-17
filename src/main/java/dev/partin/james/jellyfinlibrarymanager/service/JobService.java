@@ -6,8 +6,6 @@ import org.apache.commons.fileupload2.core.FileItemInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLException;
-
 @Service
 public class JobService implements IJobService {
 
@@ -16,22 +14,20 @@ public class JobService implements IJobService {
     @Autowired
     public JobService(MediaConvertJobRepository jobRepository) {
         this.jobRepository = jobRepository;
-
     }
 
     @Override
-    public void createJob(String fileName) throws SQLException {
-        var job = new Job(fileName);
-        jobRepository.save(job);
+    public void createJob(String fileName) {
+        jobRepository.save(new Job(fileName));
     }
 
     @Override
-    public void upload(FileItemInput inputStream) throws SQLException {
+    public void upload(FileItemInput inputStream) {
         createJob(inputStream.getName());
     }
 
     @Override
-    public void upload(FileItemInput inputStream, Job job) throws SQLException {
+    public void upload(FileItemInput inputStream, Job job) {
         createJob(inputStream.getName());
     }
 

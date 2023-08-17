@@ -1,5 +1,6 @@
 package dev.partin.james.jellyfinlibrarymanager.api.controller;
 
+import dev.partin.james.jellyfinlibrarymanager.api.model.Job;
 import dev.partin.james.jellyfinlibrarymanager.service.IJobService;
 import dev.partin.james.jellyfinlibrarymanager.service.JobService;
 import jakarta.servlet.ServletException;
@@ -63,7 +64,7 @@ public class JobController {
                     break;
                 }
 
-             //   hashes[(int) index] = Integer.toString(Arrays.hashCode(chunk));
+                //   hashes[(int) index] = Integer.toString(Arrays.hashCode(chunk));
 
 
 //                int i = 0;
