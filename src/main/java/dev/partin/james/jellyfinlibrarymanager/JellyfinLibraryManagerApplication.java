@@ -9,12 +9,18 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 import javax.sql.DataSource;
+import java.util.logging.Logger;
 
 @SpringBootApplication
 public class JellyfinLibraryManagerApplication {
     //TODO: Write tests
     public static void main(String[] args) {
         SpringApplication.run(JellyfinLibraryManagerApplication.class, args);
+    }
+
+    @Bean
+    Logger logger() {
+        return Logger.getLogger(JellyfinLibraryManagerApplication.class.getName());
     }
 
 }

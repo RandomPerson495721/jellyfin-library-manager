@@ -31,6 +31,11 @@ public class Job {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @PostPersist
+    private void generateFilePath() {
+        this.filepath = System.getProperty("java.io.tmpdir") + "jellyfin-library-manager/" + fileName.substring(0, fileName.lastIndexOf('.')) + "[JobID:" + this.id + "]/";
+    }
+
     public Job() {
         this.uploadStatus = new jobStatus("Upload");
         this.transcodeStatus = new jobStatus("Transcode");
@@ -41,7 +46,6 @@ public class Job {
 
     public Job(String fileName) {
         this.fileName = fileName;
-        this.filepath = System.getProperty("java.io.tmpdir") + fileName;
         this.uploadStatus = new jobStatus("Upload");
         this.transcodeStatus = new jobStatus("Transcode");
         this.subtitlesStatus = new jobStatus("Subtitles");
@@ -51,7 +55,6 @@ public class Job {
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
-        this.filepath = System.getProperty("java.io.tmpdir") + fileName;
     }
 }
 
