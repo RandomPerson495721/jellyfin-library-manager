@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Optional;
 import java.util.logging.Logger;
 
@@ -41,7 +38,6 @@ public class JobService implements IJobService {
             long byteOffset = byteOffsetOptional.orElse(0L);
             int chunkSize = 1024 * 1024 * 10;
             byte[] chunk = new byte[chunkSize];
-            //Make a file with
             File fileDirectory = new File(job.getFilepath());
             if (!fileDirectory.exists() && !fileDirectory.mkdirs()) {
                 throw new IOException("Failed to create directory");
@@ -62,21 +58,21 @@ public class JobService implements IJobService {
             long totalBytesRead = 0;
             long bytesRead = 0;
 
-            FileWriter fileWriter = new FileWriter(file, true);
+            try (FileOutputStream fileOutputStream = new FileOutputStream(file, true)) {
+                while (true) {
+                    bytesRead = inputStream.read(chunk, 0, chunkSize);
+                    totalBytesRead += Math.max(bytesRead, 0);
 
-            while(true) {
-                bytesRead = inputStream.read(chunk, 0, chunkSize);
-                totalBytesRead += Math.max(bytesRead, 0);
-                job.getUploadStatus().setProgress(((float) totalBytesRead / (float) fileSize) * 100);
-                if (bytesRead == -1) {
-                    break;
-                }
-                for (int i = 0; i < bytesRead; i++) {
-                    fileWriter.write(chunk[i]);
+                    if (bytesRead == -1) {
+                        break;
+                    }
+                    fileOutputStream.write(chunk, 0, (int) bytesRead);
+                    job.getUploadStatus().setProgress(((float) totalBytesRead / (float) fileSize) * 100);
                 }
             }
             job.getUploadStatus().setFinished(true);
             jobRepository.save(job);
+
             return ResponseEntity.ok("Upload complete");
         } catch (Exception e) {
             //TODO: Better error handling and logging

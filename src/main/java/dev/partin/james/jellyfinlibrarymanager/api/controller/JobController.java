@@ -41,7 +41,7 @@ public class JobController {
     @PostMapping("/upload")
     public ResponseEntity<String> upload(HttpServletRequest request) throws IOException, ServletException, InterruptedException {
         boolean isMultiPart = JakartaServletFileUpload.isMultipartContent(request);
-        //long fileSize = Long.parseLong(request.getParameter("Content-Length"));
+        long fileSize = Long.parseLong(request.getHeader("content-length"));
         var upload = new JakartaServletFileUpload();
         var iterator = upload.getItemIterator(request);
         var a = new StringBuilder();
@@ -51,7 +51,7 @@ public class JobController {
         ResponseEntity<String> response = null;
         while (iterator.hasNext()) {
             var item = iterator.next();
-            response = jobService.upload(item, 44884, Optional.empty());
+            response = jobService.upload(item, fileSize, Optional.empty());
         }
         return response;
     }
