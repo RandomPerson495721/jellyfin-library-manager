@@ -1,4 +1,4 @@
-package dev.partin.james.jellyfinlibrarymanager.batch;
+package dev.partin.james.jellyfinlibrarymanager.batch.config;
 
 import org.springframework.context.annotation.Configuration;
 
