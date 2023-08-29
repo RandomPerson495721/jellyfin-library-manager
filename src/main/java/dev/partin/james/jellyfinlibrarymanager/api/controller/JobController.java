@@ -1,7 +1,5 @@
 package dev.partin.james.jellyfinlibrarymanager.api.controller;
 
-import com.github.manevolent.ffmpeg4j.FFmpeg;
-import com.github.manevolent.ffmpeg4j.FFmpegException;
 import dev.partin.james.jellyfinlibrarymanager.service.IJobService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -44,11 +42,6 @@ public class JobController {
         return response;
     }
 
-    @PostMapping("/upload/test2")
-    public ResponseEntity<String> uploadTest2(@RequestParam String codecName) throws FFmpegException {
-        var name = FFmpeg.getCodecByName(codecName);
-        return ResponseEntity.ok(name.toString());
-    }
 
     @PostMapping("/upload/restart")
     public ResponseEntity<String> restartUpload(HttpServletRequest request) throws IOException, ServletException, InterruptedException {

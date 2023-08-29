@@ -1,13 +1,11 @@
 package dev.partin.james.jellyfinlibrarymanager.service;
 
-import com.github.manevolent.ffmpeg4j.FFmpeg;
-import com.github.manevolent.ffmpeg4j.FFmpegException;
-import com.github.manevolent.ffmpeg4j.FFmpegIO;
-import com.github.manevolent.ffmpeg4j.stream.output.FFmpegTargetStream;
-import com.github.manevolent.ffmpeg4j.stream.source.FFmpegSourceStream;
-import com.github.manevolent.ffmpeg4j.transcoder.Transcoder;
 import dev.partin.james.jellyfinlibrarymanager.api.model.JobDefinition;
 import dev.partin.james.jellyfinlibrarymanager.repositories.JobDefinitionRepository;
+import net.bramp.ffmpeg.FFmpeg;
+import net.bramp.ffmpeg.FFmpegExecutor;
+import net.bramp.ffmpeg.FFprobe;
+import net.bramp.ffmpeg.builder.FFmpegBuilder;
 import org.apache.commons.fileupload2.core.FileItemInput;
 import org.javatuples.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,7 +79,6 @@ public class JobService implements IJobService {
 
             job.getUploadStatus().setFinished(true);
             jobDefinitionRepository.save(job);
-            transcode(new FileInputStream(file), "mpegts", new FileOutputStream(new File(fileDirectory, "output.mp4")).getChannel(), "vp9");
             return new Pair<>(200, "Upload complete");
         } catch (Exception e) {
             //TODO: Better error handling and logging
@@ -92,21 +89,11 @@ public class JobService implements IJobService {
             //throw new RuntimeException(e);
             return new Pair<>(500, "Upload failed");
         }
+
+
     }
 
-    private void transcode(InputStream inputStream,
-                           String inputFormatName,
-                           SeekableByteChannel outputChannel,
-                           String outputFormatName) throws FFmpegException, IOException {
-        try (FFmpegSourceStream sourceStream = FFmpegIO.openInputStream(inputStream).open(inputFormatName);
-             FFmpegTargetStream targetStream = FFmpegIO.openChannel(outputChannel).asOutput().open(outputFormatName)) {
-            sourceStream.registerStreams();
-            sourceStream.copyToTargetStream(targetStream);
-            Transcoder.convert(sourceStream, targetStream, Double.MAX_VALUE);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
+
 
 
 }

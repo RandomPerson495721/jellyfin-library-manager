@@ -1,10 +1,5 @@
 package dev.partin.james.jellyfinlibrarymanager.helpers;
 
-import com.github.manevolent.ffmpeg4j.FFmpegException;
-import com.github.manevolent.ffmpeg4j.FFmpegIO;
-import com.github.manevolent.ffmpeg4j.stream.output.FFmpegTargetStream;
-import com.github.manevolent.ffmpeg4j.stream.source.FFmpegSourceStream;
-import com.github.manevolent.ffmpeg4j.transcoder.Transcoder;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,11 +19,18 @@ public class TranscodeConfiguration {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private int crf = -1;
+    //Nvidia NVENC
+    private int rf = -1;
+    //Intel QSV via VAAPI
+    private int qv = -1;
     private String codec;
-    private String preset;
-    private long bitrate;
-
-
+    private int bitrate = -1;
+    private boolean twoPass;
+    private boolean HDR;
+    private int[] resolution;
+    private int framerate;
+    private boolean autoCrop;
 
 }
 

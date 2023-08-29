@@ -33,7 +33,7 @@ public class JobDefinition {
 
     @PostPersist
     private void generateFilePath() {
-        this.filepath = System.getProperty("java.io.tmpdir") + "/jellyfin-library-manager/" + fileName.substring(0, fileName.lastIndexOf('.')) + "[JobID=" + this.id + "]/";
+        this.filepath = System.getProperty("java.io.tmpdir") + "jellyfin-library-manager/" + fileName.substring(0, fileName.lastIndexOf('.')) + "[JobID=" + this.id + "]/";
     }
 
     public JobDefinition() {
