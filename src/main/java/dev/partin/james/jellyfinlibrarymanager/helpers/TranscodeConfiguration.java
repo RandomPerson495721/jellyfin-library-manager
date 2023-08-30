@@ -7,10 +7,6 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.channels.SeekableByteChannel;
-
 @Getter
 @Setter
 @Entity
@@ -21,16 +17,29 @@ public class TranscodeConfiguration {
 
     private int crf = -1;
     //Nvidia NVENC
-    private int rf = -1;
+    //TODO: Verify the naming schemes for nvenc rate control
+    private int rf_nvenc = -1;
     //Intel QSV via VAAPI
-    private int qv = -1;
+    private int qv_QSV = -1;
     private String codec;
-    private int bitrate = -1;
-    private boolean twoPass;
+    private int video_bitrate = -1;
+    private boolean two_pass;
     private boolean HDR;
     private int[] resolution;
     private int framerate;
-    private boolean autoCrop;
+    private boolean auto_crop;
+    private boolean auto_deinterlace;
+
+
+    //Audio configuration
+    private int audio_bitrate = -1;
+    private int audio_channels = -1;
+    private int audio_sample_rate = -1;
+    private String audio_codec;
+    private boolean audio_passthrough;
+
+    //Subtitle configuration
+    private boolean generate_subtitles;
 
 }
 

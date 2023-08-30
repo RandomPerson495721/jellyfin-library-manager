@@ -42,8 +42,8 @@ public class JobController {
         return response;
     }
 
-
-    @PostMapping("/upload/restart")
+    //TODO: Implement security to prevent unauthorized access to this endpoint
+    //@PostMapping("/upload/restart")
     public ResponseEntity<String> restartUpload(HttpServletRequest request) throws IOException, ServletException, InterruptedException {
         long fileSize = Long.parseLong(request.getHeader("content-length"));
         var upload = new JakartaServletFileUpload();

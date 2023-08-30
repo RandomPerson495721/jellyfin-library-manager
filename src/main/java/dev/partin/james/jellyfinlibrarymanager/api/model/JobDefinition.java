@@ -3,6 +3,8 @@ package dev.partin.james.jellyfinlibrarymanager.api.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.File;
+
 @Entity
 @Getter
 @Setter
@@ -51,6 +53,10 @@ public class JobDefinition {
         this.subtitlesStatus = new jobDefinitionStatus("Subtitles");
         this.metadataStatus = new jobDefinitionStatus("Metadata");
         this.cleanupStatus = new jobDefinitionStatus("Cleanup");
+    }
+
+    public File getFile() {
+        return new File(filepath + fileName);
     }
 
     public void setFileName(String fileName) {
