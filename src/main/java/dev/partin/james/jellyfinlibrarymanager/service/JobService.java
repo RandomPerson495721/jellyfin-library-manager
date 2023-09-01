@@ -8,11 +8,13 @@ import net.bramp.ffmpeg.FFprobe;
 import net.bramp.ffmpeg.builder.FFmpegBuilder;
 import org.apache.commons.fileupload2.core.FileItemInput;
 import org.javatuples.Pair;
+import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.nio.channels.SeekableByteChannel;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.logging.Logger;
@@ -30,25 +32,16 @@ public class JobService implements IJobService {
     }
 
     @Override
-    public JobDefinition createJobDefinition(String fileName) {
-        var jobDefinition = new JobDefinition(fileName);
-        jobDefinitionRepository.save(jobDefinition);
-        return jobDefinition;
-    }
-
-    @Override
-    public Pair<Integer, String> upload(FileItemInput fileItemInput, long fileSize, Optional<Long> byteOffsetOptional) {
-        JobDefinition job = createJobDefinition(fileItemInput.getName());
+    public Pair<Integer, String> upload(FileItemInput fileItemInput, long fileSize, Optional<Long> byteOffsetOptional) throws SQLException {
+        //TODO: fix naming scheme
+        JobDefinition job = new JobDefinition(fileItemInput.getName());
+        jobDefinitionRepository.save(job);
         try {
             InputStream inputStream = fileItemInput.getInputStream();
             long byteOffset = byteOffsetOptional.orElse(0L);
             int chunkSize = 1024 * 1024 * 10;
             byte[] chunk = new byte[chunkSize];
-            File fileDirectory = new File(job.getFilepath());
-            if (!fileDirectory.exists() && !fileDirectory.mkdirs()) {
-                throw new IOException("Failed to create directory");
-            }
-            File file = new File(fileDirectory, job.getFileName());
+            File file = job.getFile();
 
             if (!file.exists() && !file.createNewFile()) {
                 throw new IOException("Failed to create file");

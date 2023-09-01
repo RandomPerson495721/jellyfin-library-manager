@@ -28,7 +28,7 @@ public class JobController {
     }
 
     @PostMapping("/upload")
-    public ResponseEntity<String> upload(HttpServletRequest request) throws IOException, ServletException, InterruptedException {
+    public ResponseEntity<String> upload(HttpServletRequest request) throws IOException, ServletException, InterruptedException, SQLException {
         long fileSize = Long.parseLong(request.getHeader("content-length"));
         var upload = new JakartaServletFileUpload();
         var iterator = upload.getItemIterator(request);
@@ -44,7 +44,7 @@ public class JobController {
 
     //TODO: Implement security to prevent unauthorized access to this endpoint
     //@PostMapping("/upload/restart")
-    public ResponseEntity<String> restartUpload(HttpServletRequest request) throws IOException, ServletException, InterruptedException {
+    public ResponseEntity<String> restartUpload(HttpServletRequest request) throws IOException, ServletException, InterruptedException, SQLException {
         long fileSize = Long.parseLong(request.getHeader("content-length"));
         var upload = new JakartaServletFileUpload();
         var iterator = upload.getItemIterator(request);
