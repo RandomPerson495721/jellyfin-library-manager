@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2023-09-03T19:23:09.042Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0" etag="A0leFfmoa3Qy7ODH3Toq" version="21.7.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-03T19:56:25.959Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0" etag="iphgWloaf9BjrQT3b7qd" version="21.7.2" type="github">
   <diagram name="Page-1" id="f0DqxVU4n79ps42XZA6x">
-    <mxGraphModel dx="356" dy="229" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2653" dy="1704" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="iICr8pPdVY2_rQM_-BbZ-1" value="Media (JPA entity)" style="swimlane;perimeterSpacing=0;rounded=0;" parent="1" vertex="1">
+        <mxCell id="iICr8pPdVY2_rQM_-BbZ-1" value="Media (is JPA entity &amp; children)" style="swimlane;perimeterSpacing=0;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="39.5" y="560" width="520.5" height="500" as="geometry" />
         </mxCell>
         <mxCell id="iICr8pPdVY2_rQM_-BbZ-6" value="VideoResource(Optional) (cont mult)" style="swimlane;" parent="iICr8pPdVY2_rQM_-BbZ-1" vertex="1">
@@ -50,22 +50,28 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="qK8T354G06c9aEnAW-Ob-17" value="VideoResourceBuilder" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="60" width="210" height="200" as="geometry" />
+          <mxGeometry x="60" width="240" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="qK8T354G06c9aEnAW-Ob-27" value="&lt;div align=&quot;left&quot;&gt;(implementation) fromFile&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;withBitrate(int bitrate)&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;withCodec(Codec(enum) codec)&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="qK8T354G06c9aEnAW-Ob-17">
-          <mxGeometry x="10" y="65" width="200" height="70" as="geometry" />
+        <mxCell id="qK8T354G06c9aEnAW-Ob-27" value="&lt;div align=&quot;left&quot;&gt;(implementation) fromFile&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;withBitrate(int bitrate)&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;withCodec(VideoCodec(enum) codec)&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;withBitDepth(int bitDepth)&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;withHDRMetadata()&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="qK8T354G06c9aEnAW-Ob-17">
+          <mxGeometry x="10" y="50" width="230" height="100" as="geometry" />
         </mxCell>
         <mxCell id="qK8T354G06c9aEnAW-Ob-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="qK8T354G06c9aEnAW-Ob-18" target="qK8T354G06c9aEnAW-Ob-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="qK8T354G06c9aEnAW-Ob-18" value="AudioResourceBuilder" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="320" width="200" height="200" as="geometry" />
+          <mxGeometry x="310" width="220" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="qK8T354G06c9aEnAW-Ob-28" value="&lt;div&gt;(implementation) fromFile&lt;/div&gt;&lt;div&gt;withBitrate(int bitrate)&lt;/div&gt;&lt;div&gt;withCodec(AudioCodec(enum) codec)&lt;br&gt;&lt;/div&gt;&lt;div&gt;withSampleRate(int sampleRate)&lt;/div&gt;&lt;div&gt;withChannels(int channels)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="qK8T354G06c9aEnAW-Ob-18">
+          <mxGeometry x="-9.5" y="40" width="230" height="100" as="geometry" />
         </mxCell>
         <mxCell id="qK8T354G06c9aEnAW-Ob-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="qK8T354G06c9aEnAW-Ob-19" target="qK8T354G06c9aEnAW-Ob-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="qK8T354G06c9aEnAW-Ob-19" value="SubtitleResourceBuilder" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="560" width="200" height="200" as="geometry" />
+          <mxGeometry x="540" width="205" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="qK8T354G06c9aEnAW-Ob-29" value="&lt;div&gt;(implementation) fromFile&lt;/div&gt;&lt;div&gt;withType(SubtitleType(enum) type)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="qK8T354G06c9aEnAW-Ob-19">
+          <mxGeometry x="-5" y="80" width="210" height="40" as="geometry" />
         </mxCell>
         <mxCell id="qK8T354G06c9aEnAW-Ob-25" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qK8T354G06c9aEnAW-Ob-2" target="iICr8pPdVY2_rQM_-BbZ-1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
