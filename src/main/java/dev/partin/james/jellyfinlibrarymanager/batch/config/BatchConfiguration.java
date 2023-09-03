@@ -7,8 +7,4 @@ import java.io.Reader;
 
 @Configuration
 public class BatchConfiguration {
-    @Bean
-    public Reader japReader() {
-
-    }
 }

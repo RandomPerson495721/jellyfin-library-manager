@@ -4,23 +4,21 @@ import dev.partin.james.jellyfinlibrarymanager.api.model.JobDefinition;
 import dev.partin.james.jellyfinlibrarymanager.helpers.TranscodeConfiguration;
 import dev.partin.james.jellyfinlibrarymanager.helpers.VideoTranscodeJobBuilder;
 import dev.partin.james.jellyfinlibrarymanager.repositories.JobDefinitionRepository;
-import net.bramp.ffmpeg.FFprobe;
 import net.bramp.ffmpeg.job.FFmpegJob;
 import org.junit.After;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.springframework.batch.core.Job;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -36,6 +34,8 @@ class JellyfinLibraryManagerApplicationTests {
 
 	@Autowired
 	private MockMvc mockMvc;
+
+	private final File BigBuckBunny = new File("src/test/resources/big_buck_bunny.mp4");
 
 	@Test
 	void contextLoads() {
@@ -104,6 +104,32 @@ class JellyfinLibraryManagerApplicationTests {
 		}
 		var testJobs = jobDefinitionRepository.getTestJobs();
 		jobDefinitionRepository.deleteAll(testJobs);
+	}
+
+	@Test
+	void testMDAHashingSpeed() throws NoSuchAlgorithmException, IOException {
+		float startTimeSeconds = System.nanoTime() / 1000000000f;
+		boolean fileExists = BigBuckBunny.exists();
+		long fileSize = BigBuckBunny.length();
+		float l = (float) fileSize / 1024f / 1024f / 1024f;
+		int repeat = (int) (100 / l);
+		FileInputStream fileStream = new FileInputStream(BigBuckBunny);
+		MessageDigest digest = MessageDigest.getInstance("MD5");
+		long totalBytesRead = 0;
+		while (repeat > 0) {
+			byte[] buffer = new byte[8192];
+			int read = 0;
+			while ((read = fileStream.read(buffer)) > 0) {
+				digest.update(buffer, 0, read);
+				totalBytesRead += read;
+			}
+			byte[] md5sum = digest.digest();
+			fileStream.reset();
+			repeat--;
+		}
+		fileStream.close();
+		float endTimeSeconds = System.nanoTime() / 1000000000f;
+		assert (endTimeSeconds - startTimeSeconds) < 5;
 	}
 
 	@Test
