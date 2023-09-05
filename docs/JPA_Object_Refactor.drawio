@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2023-09-04T18:48:42.318Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0" etag="szFxP4i_sq3IToN9gbfX" version="21.7.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-05T01:08:59.636Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0" etag="IiHFCtJESgYg4yTwpiZm" version="21.7.2" type="github">
   <diagram name="Page-1" id="f0DqxVU4n79ps42XZA6x">
     <mxGraphModel dx="2556" dy="1096" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="iICr8pPdVY2_rQM_-BbZ-1" value="Media (is JPA entity &amp; children)" style="swimlane;perimeterSpacing=0;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="39.5" y="560" width="530.5" height="520" as="geometry" />
+        <mxCell id="iICr8pPdVY2_rQM_-BbZ-1" value="=" style="swimlane;perimeterSpacing=0;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="39.5" y="560" width="530.5" height="500" as="geometry" />
         </mxCell>
         <mxCell id="iICr8pPdVY2_rQM_-BbZ-6" value="VideoResource(Optional) (cont mult)" style="swimlane;" parent="iICr8pPdVY2_rQM_-BbZ-1" vertex="1">
           <mxGeometry x="10.5" y="30" width="250" height="245" as="geometry" />
@@ -14,7 +14,7 @@
           <mxGeometry x="-10" y="15" width="260" height="230" as="geometry" />
         </mxCell>
         <mxCell id="iICr8pPdVY2_rQM_-BbZ-9" value="AudioResource(Optional) (cont mult)" style="swimlane;" parent="iICr8pPdVY2_rQM_-BbZ-1" vertex="1">
-          <mxGeometry x="269.5" y="30" width="250" height="230" as="geometry" />
+          <mxGeometry x="269.5" y="30" width="250" height="240" as="geometry" />
         </mxCell>
         <mxCell id="iICr8pPdVY2_rQM_-BbZ-10" value="&lt;div&gt;Bitrate&lt;/div&gt;&lt;div&gt;Codec&lt;br&gt;&lt;/div&gt;&lt;div&gt;Channels&lt;br&gt;&lt;/div&gt;&lt;div&gt;Bit Depth&lt;/div&gt;&lt;div&gt;Sample Rate&lt;br&gt;&lt;/div&gt;&lt;div&gt;Length&lt;/div&gt;&lt;div&gt;File (optional, stored as a string, get File obj)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="iICr8pPdVY2_rQM_-BbZ-9" vertex="1">
           <mxGeometry x="-10" y="85" width="260" height="130" as="geometry" />
@@ -25,23 +25,11 @@
         <mxCell id="iICr8pPdVY2_rQM_-BbZ-12" value="&lt;div&gt;InputBitrate&lt;/div&gt;&lt;div&gt;Framerate&lt;/div&gt;&lt;div&gt;Interlaced?&lt;/div&gt;&lt;div&gt;Teceline?&lt;/div&gt;&lt;div&gt;Bit Depth&lt;/div&gt;&lt;div&gt;Length&lt;/div&gt;&lt;div&gt;Resolution[int, int]&lt;/div&gt;&lt;div&gt;IsHDR?&lt;/div&gt;&lt;div&gt;File (optional, stored as a string, get File obj)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="iICr8pPdVY2_rQM_-BbZ-11" vertex="1">
           <mxGeometry x="-10" y="40" width="260" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="iICr8pPdVY2_rQM_-BbZ-13" value="&amp;nbsp;Segments (create entity w getter/setter)" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;" parent="iICr8pPdVY2_rQM_-BbZ-1" vertex="1">
-          <mxGeometry x="269.5" y="270" width="250.5" height="104" as="geometry" />
-        </mxCell>
-        <mxCell id="iICr8pPdVY2_rQM_-BbZ-14" value="Segment 1 9.99 means 0 to 9.99 seconds" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="iICr8pPdVY2_rQM_-BbZ-13" vertex="1">
-          <mxGeometry y="26" width="250.5" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="iICr8pPdVY2_rQM_-BbZ-15" value="Segment 2 19.99" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="iICr8pPdVY2_rQM_-BbZ-13" vertex="1">
-          <mxGeometry y="52" width="250.5" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="iICr8pPdVY2_rQM_-BbZ-16" value="&lt;div&gt;Segment 3 29.99&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="iICr8pPdVY2_rQM_-BbZ-13" vertex="1">
-          <mxGeometry y="78" width="250.5" height="26" as="geometry" />
-        </mxCell>
         <mxCell id="SI7whgxdZ4kj7hzidSnB-4" value="MetadataResource(Optional) (cont singl)" style="swimlane;" vertex="1" parent="iICr8pPdVY2_rQM_-BbZ-1">
-          <mxGeometry x="269.5" y="390" width="250" height="120" as="geometry" />
+          <mxGeometry x="269.5" y="270" width="250" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="SI7whgxdZ4kj7hzidSnB-5" value="&lt;div&gt;HDRMetadata?&lt;/div&gt;&lt;div&gt;Date&lt;/div&gt;&lt;div&gt;Name&lt;/div&gt;&lt;div&gt;Year&lt;/div&gt;&lt;div&gt;Edition&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="SI7whgxdZ4kj7hzidSnB-4">
-          <mxGeometry x="61" y="30" width="110" height="90" as="geometry" />
+        <mxCell id="SI7whgxdZ4kj7hzidSnB-5" value="&lt;div&gt;HDRMetadata?&lt;/div&gt;&lt;div&gt;Date&lt;/div&gt;&lt;div&gt;Name&lt;/div&gt;&lt;div&gt;Year&lt;/div&gt;&lt;div&gt;Edition&lt;/div&gt;&lt;div&gt;SegmentLength&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="SI7whgxdZ4kj7hzidSnB-4">
+          <mxGeometry x="61" y="60" width="110" height="100" as="geometry" />
         </mxCell>
         <mxCell id="qK8T354G06c9aEnAW-Ob-2" value="MediaBuilder" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="235" y="260" width="370" height="110" as="geometry" />
