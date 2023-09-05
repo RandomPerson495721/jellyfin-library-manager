@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-09-04T18:48:50.429Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0" etag="NFohIU7zswgwjz4aCMXX" version="21.7.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-05T01:08:55.864Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0" etag="nrYM2wg5Bnf3F_7RtJHm" version="21.7.2" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="853" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="796" dy="511" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -30,6 +30,9 @@
         </mxCell>
         <mxCell id="xhrcqTqYB2kPX1ObUqS4-17" value="public&amp;nbsp;MetadataResource process(MetadataResource)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="xhrcqTqYB2kPX1ObUqS4-16">
           <mxGeometry y="48" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xhrcqTqYB2kPX1ObUqS4-32" value="Partitioner" style="swimlane;whiteSpace=wrap;html=1;startSize=30;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="380" width="260" height="260" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
