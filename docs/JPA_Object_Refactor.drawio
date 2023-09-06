@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2023-09-05T01:08:59.636Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0" etag="IiHFCtJESgYg4yTwpiZm" version="21.7.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-06T03:35:40.328Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/117.0" etag="kb4Jrfn-gAZzU_xp3ofw" version="21.7.2" type="github">
   <diagram name="Page-1" id="f0DqxVU4n79ps42XZA6x">
-    <mxGraphModel dx="2556" dy="1096" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1322" dy="1023" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="iICr8pPdVY2_rQM_-BbZ-1" value="=" style="swimlane;perimeterSpacing=0;rounded=0;" parent="1" vertex="1">
+        <mxCell id="iICr8pPdVY2_rQM_-BbZ-1" value="Media" style="swimlane;perimeterSpacing=0;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="39.5" y="560" width="530.5" height="500" as="geometry" />
         </mxCell>
         <mxCell id="iICr8pPdVY2_rQM_-BbZ-6" value="VideoResource(Optional) (cont mult)" style="swimlane;" parent="iICr8pPdVY2_rQM_-BbZ-1" vertex="1">
@@ -25,10 +25,10 @@
         <mxCell id="iICr8pPdVY2_rQM_-BbZ-12" value="&lt;div&gt;InputBitrate&lt;/div&gt;&lt;div&gt;Framerate&lt;/div&gt;&lt;div&gt;Interlaced?&lt;/div&gt;&lt;div&gt;Teceline?&lt;/div&gt;&lt;div&gt;Bit Depth&lt;/div&gt;&lt;div&gt;Length&lt;/div&gt;&lt;div&gt;Resolution[int, int]&lt;/div&gt;&lt;div&gt;IsHDR?&lt;/div&gt;&lt;div&gt;File (optional, stored as a string, get File obj)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="iICr8pPdVY2_rQM_-BbZ-11" vertex="1">
           <mxGeometry x="-10" y="40" width="260" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="SI7whgxdZ4kj7hzidSnB-4" value="MetadataResource(Optional) (cont singl)" style="swimlane;" vertex="1" parent="iICr8pPdVY2_rQM_-BbZ-1">
+        <mxCell id="SI7whgxdZ4kj7hzidSnB-4" value="MetadataResource(Optional) (cont singl)" style="swimlane;" parent="iICr8pPdVY2_rQM_-BbZ-1" vertex="1">
           <mxGeometry x="269.5" y="270" width="250" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="SI7whgxdZ4kj7hzidSnB-5" value="&lt;div&gt;HDRMetadata?&lt;/div&gt;&lt;div&gt;Date&lt;/div&gt;&lt;div&gt;Name&lt;/div&gt;&lt;div&gt;Year&lt;/div&gt;&lt;div&gt;Edition&lt;/div&gt;&lt;div&gt;SegmentLength&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="SI7whgxdZ4kj7hzidSnB-4">
+        <mxCell id="SI7whgxdZ4kj7hzidSnB-5" value="&lt;div&gt;HDRMetadata?&lt;/div&gt;&lt;div&gt;Date&lt;/div&gt;&lt;div&gt;Name&lt;/div&gt;&lt;div&gt;Year&lt;/div&gt;&lt;div&gt;Edition&lt;/div&gt;&lt;div&gt;SegmentLength&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="SI7whgxdZ4kj7hzidSnB-4" vertex="1">
           <mxGeometry x="61" y="60" width="110" height="100" as="geometry" />
         </mxCell>
         <mxCell id="qK8T354G06c9aEnAW-Ob-2" value="MediaBuilder" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -70,25 +70,19 @@
             <mxPoint x="500" y="520" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="SI7whgxdZ4kj7hzidSnB-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="SI7whgxdZ4kj7hzidSnB-1" target="qK8T354G06c9aEnAW-Ob-2">
+        <mxCell id="SI7whgxdZ4kj7hzidSnB-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" parent="1" source="SI7whgxdZ4kj7hzidSnB-1" target="qK8T354G06c9aEnAW-Ob-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="SI7whgxdZ4kj7hzidSnB-1" value="&lt;div&gt;MetadataResourceBuilder //TODO&lt;/div&gt;&lt;div&gt;actually figure out what needs to &lt;br&gt;&lt;/div&gt;&lt;div&gt;be in this&lt;/div&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=50;" vertex="1" parent="1">
+        <mxCell id="SI7whgxdZ4kj7hzidSnB-1" value="&lt;div&gt;MetadataResourceBuilder //TODO&lt;/div&gt;&lt;div&gt;actually figure out what needs to &lt;br&gt;&lt;/div&gt;&lt;div&gt;be in this&lt;/div&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=50;" parent="1" vertex="1">
           <mxGeometry x="645" width="205" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="SI7whgxdZ4kj7hzidSnB-2" value="&lt;div&gt;(implementation) fromFile&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="SI7whgxdZ4kj7hzidSnB-1">
+        <mxCell id="SI7whgxdZ4kj7hzidSnB-2" value="&lt;div&gt;(implementation) fromFile&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="SI7whgxdZ4kj7hzidSnB-1" vertex="1">
           <mxGeometry x="20" y="85" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="SI7whgxdZ4kj7hzidSnB-6" value="IResource" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="610" y="570" width="200" height="150" as="geometry" />
-        </mxCell>
-        <mxCell id="SI7whgxdZ4kj7hzidSnB-7" value="&lt;div&gt;boolean delete()&lt;/div&gt;&lt;div&gt;boolean save()&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="SI7whgxdZ4kj7hzidSnB-6">
-          <mxGeometry x="45" y="55" width="110" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="SI7whgxdZ4kj7hzidSnB-8" value="&lt;div&gt;VMAFComparison&lt;/div&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="SI7whgxdZ4kj7hzidSnB-8" value="&lt;div&gt;VMAFComparison&lt;/div&gt;" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="600" y="760" width="210" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="SI7whgxdZ4kj7hzidSnB-11" value="&lt;div&gt;int vmafScore&lt;/div&gt;&lt;div&gt;File comparisonFIle (store as string)&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="SI7whgxdZ4kj7hzidSnB-8">
+        <mxCell id="SI7whgxdZ4kj7hzidSnB-11" value="&lt;div&gt;int vmafScore&lt;/div&gt;&lt;div&gt;File comparisonFIle (store as string)&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="SI7whgxdZ4kj7hzidSnB-8" vertex="1">
           <mxGeometry y="30" width="210" height="40" as="geometry" />
         </mxCell>
       </root>
