@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net" modified="2023-09-19T01:02:14.494Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/117.0" etag="NzJsqYDC0q0DTdDhLFBx" version="21.7.5" type="github">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1077" dy="852" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="xhrcqTqYB2kPX1ObUqS4-6" value="ItemProcessor (Spring Batch interface)" style="swimlane;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="130" y="70" width="680" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="xhrcqTqYB2kPX1ObUqS4-8" value="VideoResourceProcessor&amp;lt;VideoResource, VideoResource&amp;gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="xhrcqTqYB2kPX1ObUqS4-6" vertex="1">
+          <mxGeometry x="15" y="40" width="310" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="xhrcqTqYB2kPX1ObUqS4-11" value="public VideoResource process(VideoResource)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="xhrcqTqYB2kPX1ObUqS4-8" vertex="1">
+          <mxGeometry x="15" y="48" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xhrcqTqYB2kPX1ObUqS4-12" value="&lt;div&gt;AudioResourceProcessor&amp;lt;AudioResource, &lt;br&gt;&lt;/div&gt;&lt;div&gt;AudioResource&amp;gt;&lt;/div&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="xhrcqTqYB2kPX1ObUqS4-6" vertex="1">
+          <mxGeometry x="355" y="40" width="310" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="xhrcqTqYB2kPX1ObUqS4-13" value="public&amp;nbsp;AudioResource process(AudioResource)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="xhrcqTqYB2kPX1ObUqS4-12" vertex="1">
+          <mxGeometry x="15" y="48" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xhrcqTqYB2kPX1ObUqS4-14" value="&lt;div&gt;SubtitleResourceProcessor&amp;lt;SubtitleResource,&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;SubtitleResource&amp;gt;&lt;/div&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="xhrcqTqYB2kPX1ObUqS4-6" vertex="1">
+          <mxGeometry x="15" y="160" width="310" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="xhrcqTqYB2kPX1ObUqS4-15" value="public&amp;nbsp;SubtitleResource process(SubtitleResource)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="xhrcqTqYB2kPX1ObUqS4-14" vertex="1">
+          <mxGeometry x="10" y="48" width="290" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xhrcqTqYB2kPX1ObUqS4-16" value="&lt;div&gt;MetadataResourceProcessor&amp;lt;MetadataResource,&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;MetadataResource&amp;gt;&lt;/div&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="xhrcqTqYB2kPX1ObUqS4-6" vertex="1">
+          <mxGeometry x="355" y="160" width="310" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="xhrcqTqYB2kPX1ObUqS4-17" value="public&amp;nbsp;MetadataResource process(MetadataResource)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="xhrcqTqYB2kPX1ObUqS4-16" vertex="1">
+          <mxGeometry y="48" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xhrcqTqYB2kPX1ObUqS4-32" value="Pipeline Builder" style="swimlane;whiteSpace=wrap;html=1;startSize=30;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="140" y="380" width="260" height="260" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
