@@ -5,7 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 public class MathHelpers {
+    private int thing = 0;
     public static long mode(Iterable<Long> numbers) {
         long mode = 0;
         long maxCount = 0;

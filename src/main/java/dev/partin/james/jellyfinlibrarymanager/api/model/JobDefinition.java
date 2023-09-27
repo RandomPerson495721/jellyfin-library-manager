@@ -5,6 +5,10 @@ import lombok.*;
 
 import java.io.File;
 import java.io.IOException;
+/*
+* This file needs to be refactored inline with the draw.io diagram in the 'docs' folder.
+* This is henceforth deprecated.
+*/
 
 @Entity
 @Getter
