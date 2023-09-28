@@ -35,9 +35,6 @@ public class AudioTranscodeJobBuilder {
         FFmpegProbeResult mediaInformation = ffprobe.probe(inputFile.getAbsolutePath());
 
     }
-
-
-
     public FFmpegJob build() throws IOException {
         FFmpegProbeResult probeResult = ffprobe.probe("input.mp4");
         FFmpegStream stream = probeResult.getStreams().get(0);
@@ -86,10 +83,5 @@ public class AudioTranscodeJobBuilder {
         } else {
             return executor.createJob(ffmpegBuilder);
         }
-    }
-
-    private boolean getTeceline() {
-        //TODO: Implement this
-        return false;
     }
 }

@@ -33,6 +33,7 @@ dependencies {
 	implementation 'org.springframework.shell:spring-shell-starter'
 	implementation fileTree(dir: 'libs/commons-fileupload2-2.0.0-M1/', includes: ['*.jar'])
 	implementation fileTree(dir: 'libs/commons-io-2.13.0/', includes: ['*.jar'])
+    implementation 'org.jetbrains:annotations:24.0.0'
     testImplementation 'junit:junit:4.13.1'
     compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'

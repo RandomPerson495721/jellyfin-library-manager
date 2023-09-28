@@ -1,12 +1,7 @@
-package dev.partin.james.jellyfinlibrarymanager.pipeline;
-
-import org.apache.catalina.Container;
-import org.apache.catalina.Pipeline;
-import org.apache.catalina.Valve;
+package dev.partin.james.jellyfinlibrarymanager.processors;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
 

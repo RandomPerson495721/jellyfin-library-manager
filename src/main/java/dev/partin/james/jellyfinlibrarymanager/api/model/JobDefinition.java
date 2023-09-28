@@ -6,7 +6,7 @@ import lombok.*;
 import java.io.File;
 import java.io.IOException;
 /*
-* This file needs to be refactored inline with the draw.io diagram in the 'docs' folder.
+* This file needs to be refactored.
 * This is henceforth deprecated.
 */
 
@@ -50,9 +50,7 @@ public class JobDefinition {
         }
     }
 
-    public JobDefinition() {
-        this((String) null);
-    }
+    public JobDefinition() {}
 
     public JobDefinition(String fileName) {
         this.fileName = fileName;
