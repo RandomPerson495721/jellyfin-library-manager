@@ -27,6 +27,13 @@ public class VideoResource extends IResource {
     private Long id;
 
 
+    public VideoResource(JPAFile file) {
+        super(file);
+    }
+
+    public VideoResource() {
+        super();
+    }
 
 }
 

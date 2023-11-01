@@ -2,7 +2,7 @@ package dev.partin.james.jellyfinlibrarymanager;
 
 import dev.partin.james.jellyfinlibrarymanager.api.model.JobDefinition;
 import dev.partin.james.jellyfinlibrarymanager.helpers.TranscodeConfiguration;
-import dev.partin.james.jellyfinlibrarymanager.helpers.VideoTranscodeJobBuilder;
+import dev.partin.james.jellyfinlibrarymanager.helpers.VideoTranscodeJobBuilder_OLD;
 import dev.partin.james.jellyfinlibrarymanager.repositories.JobDefinitionRepository;
 import net.bramp.ffmpeg.job.FFmpegJob;
 import org.junit.After;
@@ -90,7 +90,7 @@ class JellyfinLibraryManagerApplicationTests {
 		//640x480
 		transcodeConfiguration.setResolution(new int[]{640, 480});
 		transcodeConfiguration.setAuto_deinterlace(true);
-		FFmpegJob job = new VideoTranscodeJobBuilder(transcodeConfiguration, jobDefinition).build();
+		FFmpegJob job = new VideoTranscodeJobBuilder_OLD(transcodeConfiguration, jobDefinition).build();
 		job.run();
 		jobDefinitionRepository.delete(jobDefinition);
 	}
