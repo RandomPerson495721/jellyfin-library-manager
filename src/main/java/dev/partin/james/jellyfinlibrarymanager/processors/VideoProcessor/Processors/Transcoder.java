@@ -24,7 +24,7 @@ public class Transcoder extends VideoProcessorChain {
 
 
     @Override
-    public void process(VideoProcessorRequest request) {
+    public void process(VideoProcessorRequest request) throws IOException {
         VideoResource input = request.getInput();
         VideoResource output = request.getOutput();
         var segments = input.getSegments();
@@ -34,7 +34,7 @@ public class Transcoder extends VideoProcessorChain {
             if (!segment.isLeased()) {
                 var videoTranscodeJobBuilder = new VideoTranscodeJobBuilder(input, ffmpeg);
                 segment.acquireLease(this);
-                var command =
+                var command = videoTranscodeJobBuilder.build();
             }
         }
         next(request);

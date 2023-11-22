@@ -45,9 +45,10 @@ public class VideoTranscodeJobBuilder {
             }
 
         }
+
     }
 
-    private FFmpegJob build() {
+    public FFmpegJob build() {
         return null;
     }
 

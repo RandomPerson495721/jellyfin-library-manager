@@ -130,9 +130,7 @@ public class VideoTranscodeJobBuilder_OLD {
         }
         interlace = transcodeConfiguration.isAuto_deinterlace() && getInterlaced();
         teceline = getTeceline();
-        this.ffmpegOutputBuilder = new FFmpegOutputBuilder().setFilename(outputFile.getAbsolutePath()).disableAudio().disableSubtitle().setVideoCodec(transcodeConfiguration.getCodec()).addExtraArgs("-movflags", "frag_keyframe+empty_moov")
-                //TODO: Investigate mysterious dash sign
-                ;
+        this.ffmpegOutputBuilder = new FFmpegOutputBuilder().setFilename(outputFile.getAbsolutePath()).disableAudio().disableSubtitle().setVideoCodec(transcodeConfiguration.getCodec()).addExtraArgs("-movflags", "frag_keyframe+empty_moov");
 
         switch (transcodeConfiguration.getCodec()) {
             case "libx264", "libx265", "libvpx-vp9", "libaom-av1", "av1-svt":

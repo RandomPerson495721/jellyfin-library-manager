@@ -7,6 +7,8 @@ import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+
 public abstract class VideoProcessorChain {
     protected Logger logger = LoggerFactory.getLogger(VideoProcessorChain.class);
     private VideoProcessorChain next;
@@ -16,7 +18,7 @@ public abstract class VideoProcessorChain {
         return next;
     }
 
-    public abstract void process(VideoProcessorRequest request);
+    public abstract void process(VideoProcessorRequest request) throws IOException;
 
     protected void next(VideoProcessorRequest request) {
         try {
